@@ -1,44 +1,46 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Pin from "../components/icons/Pin.svelte";
-import { P, A } from "flowbite-svelte";
+import { P } from "flowbite-svelte";
+import Blocklink from "../components/Blocklink.astro";
 ---
 
-<Layout title="Boda">
+<Layout title="Boda de Ali y Dani">
   <main class="flex flex-col gap-8 justify-center items-center">
     <div class="flex justify-center gap-4">
-      <A href="/cuando">Cuando</A>
-      <A href="/" disabled>Volver</A>
-      <A href="/asistencia">Vienes?</A>
+      <Blocklink href="/cuando">Cuando</Blocklink>
+      <Blocklink href="/" disabled>Volver</Blocklink>
+      <Blocklink href="/asistencia">Vienes?</Blocklink>
     </div>
     <div class="flex flex-col text-center gap-y-4">
-      <P />
-      <span class="text-green-600"> Camping los Arenales</span>, en la localidad
-      de Almagro, Ciudad Real.
+      <P
+        ><span class="text-green-600"> Camping los Arenales </span>, en la
+        localidad de Almagro, Ciudad Real.</P
+      >
+      <strong class="text-pink-600"
+        >Deberás reservar tu alojamiento directamente con ellos</strong
+      >
     </div>
-    <strong class="text-pink-600"
-      >Deberás reservar tu alojamiento directamente con ellos</strong
+    <a class="text-amber-600 text-center text-2xl" href="tel:+34648704046"
+      >+34 648 704 046</a
     >
+    <a
+      href="https://maps.app.goo.gl/wszw81imd1u9XxndA"
+      class="flex gap-2 items-center text-center text-amber-500 text-l"
+    >
+      <Pin class="svg-shadow" />
+      <span> Mapa de ubicación </span>
+    </a>
+    <iframe
+      class="max-sm:hidden outline-dashed outline-2 outline-white"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3105.932805825049!2d-3.698572923889214!3d38.87977914774321!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd695f01f0e8b733%3A0xe2833cdc2deb7eb0!2sCamping-bungalow%20Los%20Arenales%20Almagro!5e0!3m2!1sen!2ses!4v1708875488287!5m2!1sen!2ses"
+      width="600"
+      height="450"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"></iframe>
   </main>
-  <a class="text-amber-600 text-center text-2xl" href="tel:+34648704046"
-    >+34 648 704 046</a
-  >
-  <a
-    href="https://maps.app.goo.gl/wszw81imd1u9XxndA"
-    class="flex gap-2 items-center text-center text-amber-500 text-l"
-  >
-    <Pin class="svg-shadow" />
-    <span> Mapa de ubicación</span>
-  </a>
-  <iframe
-    class="max-sm:hidden outline-dashed outline-2 outline-white"
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3105.932805825049!2d-3.698572923889214!3d38.87977914774321!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd695f01f0e8b733%3A0xe2833cdc2deb7eb0!2sCamping-bungalow%20Los%20Arenales%20Almagro!5e0!3m2!1sen!2ses!4v1708875488287!5m2!1sen!2ses"
-    width="600"
-    height="450"
-    style="border:0;"
-    allowfullscreen=""
-    loading="lazy"
-    referrerpolicy="no-referrer-when-downgrade"></iframe>
 </Layout>
 
 <style>

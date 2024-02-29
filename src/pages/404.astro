@@ -1,6 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Blocklink from "../components/Blocklink.astro";
 import { ViewTransitions } from "astro:transitions";
+import Castle from "../components/Castle.astro";
 ---
 
 <Layout title="Boda de Ali y Dani">
@@ -9,9 +11,10 @@ import { ViewTransitions } from "astro:transitions";
       <h1>Sorry, but your page is in another castle!</h1>
     </div>
     <div class="flex justify-center gap-4 animate-fadeInUp z-10">
-      <a href="/">Volver</a>
+      <Blocklink href="/">Volver</Blocklink>
     </div>
   </main>
+  <Castle />
 </Layout>
 <ViewTransitions />
 

@@ -1,0 +1,24 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Button, P, A } from "flowbite-svelte";
+---
+
+<Layout title="logout">
+  <main class="flex flex-col gap-4 justify-center items-center">
+    <P class="mb-3 md:text-xl" weight="light" size="lg" color="text-orange-400"
+      >Estás seguro de querer cerrar la sesión?</P
+    >
+    <P
+      >Si no estás registrado, tendrás que volver a escanear el código QR para
+      iniciar la sesión</P
+    >
+    <P
+      >la <A href="/gallery">Galería</A>y el <A href="/chat">Chat</A> sólo están
+      disponibles si tienes tu sesión activa</P
+    >
+    <form action="/api/logout" method="post">
+      <Button href="/" outline>Mejor no</Button>
+      <Button>Si, Cerrar sesion</Button>
+    </form>
+  </main>
+</Layout>
