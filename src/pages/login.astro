@@ -1,0 +1,36 @@
+---
+import Layout from "../layouts/Layout.astro";
+export const prerender = false;
+const user = Astro.locals.user;
+if (user) {
+  return Astro.redirect("/");
+}
+---
+
+<Layout title="Login my queen">
+  <main>
+    <form
+      method="post"
+      action="/api/login"
+      class="flex flex-col gap-4 justify-center max-w-screen-sm"
+    >
+      <label for="user"
+        >User
+        <input type="text" name="username" id="user" />
+      </label>
+      <label for="password"
+        >Password
+        <input type="password" name="password" id="password" /></label
+      >
+
+      <button type="submit" class="button">Login</button>
+    </form>
+  </main>
+</Layout>
+
+<style>
+  label {
+    display: flex;
+    flex-direction: column;
+  }
+</style>

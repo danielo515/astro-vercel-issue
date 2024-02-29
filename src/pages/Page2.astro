@@ -1,10 +1,13 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { getCloudinaryImageUrl } from "../server/cloudinary";
+const image = getCloudinaryImageUrl({ url: "sample.jpg", width: 300 });
 ---
 
 <Layout title="Welcome to Astro.">
   <main class="flex flex-col gap-4">
     This is a test page
     <div>bla</div>
+    <img src={image} alt="sample" />
   </main>
 </Layout>

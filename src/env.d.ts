@@ -3,6 +3,7 @@
 
 declare namespace App {
   interface Locals {
+    session: {} | null;
     user: User | null;
   }
 }
