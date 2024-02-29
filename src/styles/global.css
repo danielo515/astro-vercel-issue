@@ -1,0 +1,189 @@
+:root {
+  --brown: #8b4513;
+  --mario-font: "Super Mario 256", sans-serif;
+  --mario-font-alt: "Super Mario Bros", sans-serif;
+  --mario-shadow: 2px 2px 2px black;
+
+  /** Sizings */
+
+  --ground-height: 70px;
+
+  --color-red: #e62525;
+  --color-blue: #199bd6;
+  --color-green: #42af47;
+  --color-yellow: #fbd009;
+  --color-orange: #f96300;
+  --color-purple: #7e0082;
+  --color-teal: #00a3a3;
+  --color-brown: #8b4513;
+  --color-ground: #a98052;
+  --color-gray: #808080;
+  /** Zelda theme */
+  --zelda-green: #00cc00;
+  --zelda-lime-green: #1bb04c;
+  --zelda-blue-gray: #508372;
+  --zelda-chartreuse: #70af23;
+  --zelda-sky-blue: #38b6f1;
+  --zelda-green-rgb: rgb(0, 204, 0);
+  --zelda-lime-green-rgb: rgb(27, 176, 76);
+  --zelda-blue-gray-rgb: rgb(80, 131, 114);
+  --zelda-chartreuse-rgb: rgb(112, 175, 35);
+  --zelda-sky-blue-rgb: rgb(56, 182, 241);
+}
+html {
+  font-family: system-ui, sans-serif;
+  background: #5f87ed;
+  background-size: 224px;
+  height: 100%;
+}
+body {
+  height: 100%;
+  font-family: goblin, sans-serif;
+}
+code {
+  font-family:
+    goblin,
+    Menlo,
+    Monaco,
+    Lucida Console,
+    Liberation Mono,
+    DejaVu Sans Mono,
+    Bitstream Vera Sans Mono,
+    Courier New,
+    monospace;
+}
+/* Register your custom font family and tell the browser where to find it. */
+@font-face {
+  font-family: "Super Mario 256";
+  src:
+    url("/fonts/SuperMarioGalaxy.woff2") format("woff2"),
+    url("/fonts/SuperMarioGalaxy.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Super Color";
+  src:
+    url("/fonts/COLOR.otf") format("opentype"),
+    url("/fonts/SuperColorRegular.woff2") format("woff2"),
+    url("/fonts/SuperColorRegular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Super Mario Bros";
+  src:
+    url("/fonts/SuperMarioBros-Regular.woff2") format("woff2"),
+    url("/fonts/SuperMarioBros-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Super Mario Bros";
+  src:
+    url("/fonts/SuperMarioBros-Regular.woff2") format("woff2"),
+    url("/fonts/SuperMarioBros-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "goblin";
+  src:
+    url("/fonts/A-Goblin-Appears.woff2") format("woff2"),
+    url("/fonts/A-Goblin-Appears.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+main {
+  margin: auto;
+  padding: 1rem;
+  width: 800px;
+  max-width: calc(100% - 2rem);
+  color: white;
+  font-size: 1rem;
+  line-height: 1.6;
+  max-height: calc(100% - var(--ground-height));
+  padding-bottom: var(--ground-height);
+  overflow-y: auto;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  color: var(--color-blue);
+  padding: 0.5rem;
+  margin: 0.5rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--mario-font);
+  text-shadow: var(--mario-shadow);
+}
+
+.svg-shadow {
+  filter: drop-shadow(2px 2px 1px black);
+}
+
+@keyframes elasticZoomIn {
+  0% {
+    transform: scale(0);
+  }
+  70% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animation-zoom-in {
+  animation-name: elasticZoomIn;
+  animation-duration: 350ms;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes flipAndMove {
+  0% {
+    opacity: 0;
+    transform: translateY(0) rotateY(0);
+  }
+  20% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-200%) rotateY(180deg);
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(-50%) rotateY(360deg);
+  }
+}

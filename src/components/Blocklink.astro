@@ -1,0 +1,106 @@
+---
+interface Props {
+  href: string;
+  disabled?: boolean;
+}
+
+const { href, disabled = false } = Astro.props;
+---
+
+<block-link data-disabled={disabled.toString()}>
+  <a {href} class="flex flex-col justify-center items-center">
+    <span class="relative">
+      <img
+        src="/images/coin.svg"
+        alt="Moneda de la suerte"
+        class="w-10 h-10 mx-auto absolute coin"
+      />
+      {
+        disabled ? (
+          <img src="/109.svg" alt="block" class="block-body z-10 stone-block" />
+        ) : (
+          <img
+            src="/questionmark.svg"
+            alt="question mark"
+            class="block-body z-10"
+          />
+        )
+      }
+    </span>
+    <slot />
+  </a></block-link
+>
+
+<style>
+  .block-body {
+    height: 4em;
+    width: 4em;
+  }
+  .coin {
+    top: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transition-duration: 0.25s;
+  }
+  a {
+    color: white;
+    font-family: var(--mario-font);
+    text-transform: uppercase;
+    text-shadow: 2px 2px 2px black;
+  }
+
+  .animation-active {
+    animation-name: flipAndMove;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
+  @keyframes bounce {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-15px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  .bounce {
+    animation: bounce 0.2s ease-in-out 2;
+  }
+</style>
+
+<script>
+  import { navigate } from "astro:transitions/client";
+  class Blocklink extends HTMLElement {
+    constructor() {
+      super();
+
+      // Read the message from the data attribute.
+      const isDisabled = this.dataset.disabled === "true";
+      const button = this.querySelector("a");
+      const coin = this.querySelector(".coin");
+      const stoneBlock = this.querySelector(".stone-block");
+      button?.addEventListener("click", (event) => {
+        if (isDisabled) {
+          stoneBlock?.classList.toggle("bounce");
+          const audio = new Audio("/sounds/smb_breakblock.wav");
+          audio.play();
+          return;
+        }
+        coin?.classList.toggle("animation-active");
+        event.preventDefault();
+        button?.addEventListener("animationend", () => {
+          navigate(button.href);
+        });
+        const audio = new Audio("/coin.wav");
+        audio.play();
+      });
+    }
+  }
+
+  customElements.define("block-link", Blocklink);
+</script>

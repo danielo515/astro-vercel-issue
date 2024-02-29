@@ -1,0 +1,26 @@
+---
+
+---
+
+<!-- <img src="/ground.png" /> -->
+<div class="ground"></div>
+
+<style>
+  .ground {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: var(--ground-height);
+    background-image: url("/ground.png");
+    background-color: var(--color-ground);
+    background-repeat: repeat-x;
+    background-size: contain;
+    z-index: 1;
+  }
+  @media (min-width: 1024px) {
+    :root {
+      --ground-height: 100px;
+    }
+  }
+</style>

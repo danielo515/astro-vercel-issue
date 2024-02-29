@@ -2,7 +2,6 @@
 import Layout from "../layouts/Layout.astro";
 import Blocklink from "../components/Blocklink.astro";
 import Header from "../components/Header.astro";
-import LoggedInLinks from "../components/LoggedInLinks.svelte";
 ---
 
 <Layout title="Boda de Ali y Dani">
@@ -13,6 +12,5 @@ import LoggedInLinks from "../components/LoggedInLinks.svelte";
       <Blocklink href="/lugar">Donde</Blocklink>
       <Blocklink href="/asistencia">Vienes?</Blocklink>
     </div>
-    <LoggedInLinks client:only />
   </main>
 </Layout>

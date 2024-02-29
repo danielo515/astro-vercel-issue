@@ -1,0 +1,101 @@
+---
+
+---
+
+<h1 class="flex flex-col items-center p-8">
+  <div class="super-script text-md text-2xl">
+    <span>b</span>
+    <span>o</span>
+    <span>d</span>
+    <span>a</span>
+    <span></span>
+    <span>d</span>
+    <span>e</span>
+  </div>
+  <img id="Ali" src="/Ali.png" alt="Alicia" />
+  <img id="letter-y" src="/letter-y.png" alt="Y" />
+  <img id="Danielo" src="/Danielo.png" alt="Danielo" />
+</h1>
+
+<style>
+  h1 {
+    font-size: 2em;
+    font-family: "Super Mario 256";
+  }
+  .main-title {
+    font-family: "Super Color";
+  }
+  #Danielo {
+  }
+  @keyframes zoomInElastic {
+    0% {
+      transform: scale(0.5);
+    }
+    30% {
+      transform: scale(1.2);
+    }
+    50% {
+      transform: scale(0.9);
+    }
+    70% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  #Danielo,
+  #Ali {
+    animation: zoomInElastic 1s ease-in-out;
+  }
+  #letter-y {
+    animation: zoomInElastic 1s ease-in-out;
+    scale: 0.8;
+    margin-top: -8px;
+  }
+  #Danielo {
+    margin-top: -20px;
+  }
+  .super-script {
+    text-shadow:
+      -2px 2px 0px rgba(0, 0, 0, 0.9),
+      -2px -1px 0px rgba(0, 0, 0, 0.9),
+      1px 1px 0px rgba(0, 0, 0, 0.5);
+  }
+
+  .super-script span:nth-child(1) {
+    color: var(--color-red);
+  }
+  .super-script span:nth-child(2) {
+    color: var(--color-blue);
+  }
+  .super-script span:nth-child(3) {
+    color: var(--color-green);
+  }
+  .super-script span:nth-child(4) {
+    color: var(--color-yellow);
+  }
+  .super-script span:nth-child(5) {
+    color: var(--color-orange);
+  }
+  .super-script span:nth-child(6) {
+    color: var(--color-purple);
+  }
+  .super-script span:nth-child(7) {
+    color: var(--color-blue);
+  }
+  .super-script span:nth-child(8) {
+    color: var(--color-teal);
+  }
+  .super-script span:nth-child(9) {
+    color: var(--color-brown);
+  }
+  .super-script span:nth-child(10) {
+    color: var(--color-gray);
+  }
+  .super-script {
+    display: flex;
+    gap: 0.2em;
+  }
+</style>
